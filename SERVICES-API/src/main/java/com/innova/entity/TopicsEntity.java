@@ -20,7 +20,7 @@ public class TopicsEntity {
 	@Column(name = "TITLE", nullable = false)
     private String title;
 	
-	@Column(name = "ATTACHEMENT", nullable = true)
+	@Column(name = "ATTACHEMENT ", nullable = true)
 	private Blob attachement;
 
 	public Long getId() {

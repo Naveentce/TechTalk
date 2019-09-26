@@ -9,13 +9,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.Mapping;
+
 @Entity
-@Table(name = "TEAM_DETAILS")
+@Table(name = "TEAM_MEMBER_DETAILS")
 public class TeamDetailsEntity {
 
-    @Id
+    
+	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "Id1", nullable = false)
+    @Column(name = "Id", nullable = false)
     private Long id;
 
     @Column(name = "EMPNAME", nullable = false)
@@ -33,15 +36,22 @@ public class TeamDetailsEntity {
     @Column(name = "BU", nullable = false)
     private String bu;
     
-    @OneToOne
-    @JoinColumn(name="ID1")
-    private Team1Entity team1;
+    @Column(name = "TOPIC_ID", nullable = true)
+    private Long topic_id;
     
-    @OneToOne
-    @JoinColumn(name="ID1")
-    private Team2Entity team2;
     
-    public String getEmpname() {
+//    @OneToOne(mappedBy = "TEAMDETAILSENTITY")
+//    private TechTalk_Teams techtalk_teams;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getEmpname() {
 		return empname;
 	}
 
@@ -81,21 +91,21 @@ public class TeamDetailsEntity {
 		this.bu = bu;
 	}
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Team1Entity getTeam1() {
-		return team1;
+//	public TechTalk_Teams getTechtalk_teams() {
+//		return techtalk_teams;
+//	}
+//
+//	public void setTechtalk_teams(TechTalk_Teams techtalk_teams) {
+//		this.techtalk_teams = techtalk_teams;
+//	}
+	public Long getTopic_id() {
+		return topic_id;
 	}
 
-	public void setTeam1(Team1Entity team1) {
-		this.team1 = team1;
+	public void setTopic_id(Long topic_id) {
+		this.topic_id = topic_id;
 	}
 
-
+    
+ 
 }

@@ -34,7 +34,17 @@ public class RatingsEntity {
 	@Column(name = "FEED6", nullable = false)
 	private Long feed6;
 
+	@Column(name = "TOPIC_ID", nullable = false)
+	private Long topic_id;
 	
+	public Long getTopic_id() {
+		return topic_id;
+	}
+
+	public void setTopic_id(Long topic_id) {
+		this.topic_id = topic_id;
+	}
+
 	public Long getFeed2() {
 		return feed2;
 	}

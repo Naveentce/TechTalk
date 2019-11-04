@@ -22,8 +22,8 @@ public class TechTalk_Teams {
 	@Column(name = "TEAM_NAME", nullable = false)
 	private String team_name;
 	
-	@Column(name = "TEAM_MEMBER_DETAILS_ID", nullable = false)
-	private Long team_members_details_id;
+//	@Column(name = "TEAM_MEMBER_DETAILS_ID", nullable = false)
+//	private Long team_members_details_id;
 
 //	@OneToOne
 //	@JoinColumn(name = "ID")
@@ -53,14 +53,14 @@ public class TechTalk_Teams {
 //	public void setTeamDetailsEntity(TeamDetailsEntity teamDetailsEntity) {
 //		this.teamDetailsEntity = teamDetailsEntity;
 //	}
-	@OneToOne(cascade = CascadeType.ALL)
-	public Long getTeam_members_details_id() {
-		return team_members_details_id;
-	}
-
-	public void setTeam_members_details_id(Long team_members_details_id) {
-		this.team_members_details_id = team_members_details_id;
-	}
+//	@OneToOne(cascade = CascadeType.ALL)
+//	public Long getTeam_members_details_id() {
+//		return team_members_details_id;
+//	}
+//
+//	public void setTeam_members_details_id(Long team_members_details_id) {
+//		this.team_members_details_id = team_members_details_id;
+//	}
 	
 	
 	

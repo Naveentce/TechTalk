@@ -24,9 +24,7 @@ public class TopicsController {
 	public Iterable<TopicsEntity> sec(){
 		List<TopicsEntity> topics = (List<TopicsEntity>) topicsDAO.findAll();
 
-        //StringBuilder su = new StringBuilder();
-
-         return topics;
+		return topics;
 		
 	}
 

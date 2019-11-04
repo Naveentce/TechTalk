@@ -33,10 +33,34 @@ public class RatingsEntity {
 
 	@Column(name = "FEED6", nullable = false)
 	private Long feed6;
-
+	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "TOPIC_ID", nullable = false)
 	private Long topic_id;
 	
+	@Column(name = "SUBMITER_NAME", nullable = false)
+	private String submiter_id;
+	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "TECHTALK_TEAMS_ID")
+	private Long techtalk_teams_id;
+	
+	public Long getTechtalk_teams_id() {
+		return techtalk_teams_id;
+	}
+
+	public void setTechtalk_teams_id(Long techtalk_teams_id) {
+		this.techtalk_teams_id = techtalk_teams_id;
+	}
+
+	public String getSubmiter_id() {
+		return submiter_id;
+	}
+
+	public void setSubmiter_id(String submiter_id) {
+		this.submiter_id = submiter_id;
+	}
+
 	public Long getTopic_id() {
 		return topic_id;
 	}

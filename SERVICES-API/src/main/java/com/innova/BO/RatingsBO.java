@@ -4,7 +4,19 @@ public class RatingsBO {
 
 	private String value1;
 	private String value2;
+	private String value3;
+	private String value4;
+	private String value5;
+	private String value6;
+	private String value13;
 	
+	
+	public String getValue13() {
+		return value13;
+	}
+	public void setValue13(String value13) {
+		this.value13 = value13;
+	}
 	public String getValue1() {
 		return value1;
 	}
@@ -41,9 +53,6 @@ public class RatingsBO {
 	public void setValue6(String value6) {
 		this.value6 = value6;
 	}
-	private String value3;
-	private String value4;
-	private String value5;
-	private String value6;
+
 	
 }

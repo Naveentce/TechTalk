@@ -8,25 +8,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.innova.dao.RatingsDAO;
-import com.innova.entity.RatingsEntity;
+import com.innova.BO.RatingsBO;
+import com.innova.dao.VersionDAO;
+import com.innova.entity.TopicsEntity;
+import com.innova.entity.VersionEntity;
 
 @RestController
 @CrossOrigin
-public class ScoreboardController {
+public class VersionController {
 
 	@Autowired
-	private RatingsDAO ratingsDAO;
+	private VersionDAO versionDAO;
 	
 	@ResponseBody
-	@GetMapping("/score")
-	public Iterable<RatingsEntity> getscore(){
-		List <RatingsEntity> all = (List<RatingsEntity>) ratingsDAO.findAll();
-		return all;
-		    
+	@GetMapping("/version")
+	private List<VersionEntity> index(){
+		return null;
+		
 	}
-
+	
 }
-
-
-

@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.innova.dao.TopicsDAO;
-import com.innova.entity.TeamDetailsEntity;
 import com.innova.entity.TopicsEntity;
 
 @RestController
-@CrossOrigin(origins ="http://localhost:4200")
+@CrossOrigin
 public class TopicsController {
 	
 	@Autowired
@@ -23,7 +22,6 @@ public class TopicsController {
 	@GetMapping("/topics")
 	public Iterable<TopicsEntity> sec(){
 		List<TopicsEntity> topics = (List<TopicsEntity>) topicsDAO.findAll();
-
 		return topics;
 		
 	}

@@ -1,10 +1,14 @@
 package com.innova.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,13 +16,13 @@ import javax.persistence.Table;
 public class RatingsEntity {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "Id", nullable = false)
-    private Long id;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Id", nullable = false)
+	private Long id;
+
 	@Column(name = "FEED1", nullable = false)
 	private Long feed1;
-	
+
 	@Column(name = "FEED2", nullable = false)
 	private Long feed2;
 
@@ -33,41 +37,37 @@ public class RatingsEntity {
 
 	@Column(name = "FEED6", nullable = false)
 	private Long feed6;
-	
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "TOPIC_ID", nullable = false)
-	private Long topic_id;
-	
-	@Column(name = "SUBMITER_NAME", nullable = false)
-	private String submiter_id;
-	
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "TECHTALK_TEAMS_ID")
-	private Long techtalk_teams_id;
-	
-	public Long getTechtalk_teams_id() {
-		return techtalk_teams_id;
-	}
 
-	public void setTechtalk_teams_id(Long techtalk_teams_id) {
-		this.techtalk_teams_id = techtalk_teams_id;
-	}
+	@JoinColumn(name = "TOPIC_ID")
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private TopicsEntity topic;
 
-	public String getSubmiter_id() {
-		return submiter_id;
-	}
+	@JoinColumn(name = "TEAM_MEMBER_ID")
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private TeamDetailsEntity team;
 
-	public void setSubmiter_id(String submiter_id) {
-		this.submiter_id = submiter_id;
-	}
+	/*
+	 * @GeneratedValue(strategy=GenerationType.IDENTITY)
+	 * 
+	 * @Column(name = "TOPIC_ID", nullable = false) private Long topic_id;
+	 * 
+	 * 
+	 * @GeneratedValue(strategy=GenerationType.IDENTITY)
+	 * 
+	 * @Column(name = "TECHTALK_TEAMS_ID") private Long techtalk_teams_id;
+	 */
 
-	public Long getTopic_id() {
-		return topic_id;
-	}
-
-	public void setTopic_id(Long topic_id) {
-		this.topic_id = topic_id;
-	}
+	/*
+	 * public Long getTechtalk_teams_id() { return techtalk_teams_id; }
+	 * 
+	 * public void setTechtalk_teams_id(Long techtalk_teams_id) {
+	 * this.techtalk_teams_id = techtalk_teams_id; }
+	 * 
+	 * 
+	 * public Long getTopic_id() { return topic_id; }
+	 * 
+	 * public void setTopic_id(Long topic_id) { this.topic_id = topic_id; }
+	 */
 
 	public Long getFeed2() {
 		return feed2;
@@ -125,5 +125,20 @@ public class RatingsEntity {
 		this.feed1 = feed1;
 	}
 
-		
+	public TopicsEntity getTopic() {
+		return topic;
+	}
+
+	public void setTopic(TopicsEntity topic) {
+		this.topic = topic;
+	}
+
+	public TeamDetailsEntity getTeam() {
+		return team;
+	}
+
+	public void setTeam(TeamDetailsEntity team) {
+		this.team = team;
+	}
+
 }

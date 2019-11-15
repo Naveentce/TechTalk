@@ -17,7 +17,7 @@ import com.innova.dao.RatingsDAO;
 import com.innova.entity.RatingsEntity;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class RatingsCotroller {
 	
 	@Autowired
@@ -41,7 +41,6 @@ public class RatingsCotroller {
 			entity.setFeed4(Long.valueOf(ratingsBO.getValue4()));
 			entity.setFeed5(Long.valueOf(ratingsBO.getValue5()));
 			entity.setFeed6(Long.valueOf(ratingsBO.getValue6()));
-			entity.setSubmiter_id(ratingsBO.getValue13()+"");
 			ratings.add(entity);
 		}
 		

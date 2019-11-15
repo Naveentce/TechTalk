@@ -1,15 +1,18 @@
 package com.innova.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.springframework.web.bind.annotation.Mapping;
 
 @Entity
 @Table(name = "TEAM_MEMBER_DETAILS")
@@ -20,29 +23,33 @@ public class TeamDetailsEntity {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
     private Long id;
-
-    @Column(name = "EMPNAME", nullable = false)
-    private String empname;
-    
-    @Column(name = "EMPID", nullable = false)
-    private String empID;
-    
-    @Column(name = "DESIGNATION", nullable = false)
-    private String designation;
-    
-    @Column(name = "TEAM_NAME", nullable = false)
-    private String team_name;
-    
-    @Column(name = "BU", nullable = false)
-    private String bu;
-    
-    @Column(name = "TOPIC_ID", nullable = true)
-    private Long topic_id;
-    
-    
-//    @OneToOne(mappedBy = "TEAMDETAILSENTITY")
-//    private TechTalk_Teams techtalk_teams;
-
+	
+	@Column(name = "EMPID", nullable = false)
+	private String empId;
+	
+	@Column(name = "EMPNAME", nullable = false)
+	private String empName;
+	
+	@Column(name = "DESIGNATION", nullable = false)
+	private String designation;
+	
+	/*
+	 * @Column(name = "TEAM_ID", nullable = false) private Long teamId;
+	 */
+	
+	@OneToMany(mappedBy =  "presentedBy")
+	private List<TopicsEntity> topics; 
+	
+	@JoinColumn(name = "TEAM_ID")
+	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	private TechTalkTeamsEntity team;
+	
+	@Column(name = "BU", nullable = false)
+	private String bu;
+	
+	@Column(name = "EMAIL", nullable = false)
+	private String eMail;
+	
 	public Long getId() {
 		return id;
 	}
@@ -51,20 +58,20 @@ public class TeamDetailsEntity {
 		this.id = id;
 	}
 
-	public String getEmpname() {
-		return empname;
+	public String getEmpId() {
+		return empId;
 	}
 
-	public void setEmpname(String empname) {
-		this.empname = empname;
+	public void setEmpId(String empId) {
+		this.empId = empId;
 	}
 
-	public String getEmpID() {
-		return empID;
+	public String getEmpName() {
+		return empName;
 	}
 
-	public void setEmpID(String empID) {
-		this.empID = empID;
+	public void setEmpName(String empName) {
+		this.empName = empName;
 	}
 
 	public String getDesignation() {
@@ -75,13 +82,11 @@ public class TeamDetailsEntity {
 		this.designation = designation;
 	}
 
-	public String getTeam_name() {
-		return team_name;
-	}
-
-	public void setTeam_name(String team_name) {
-		this.team_name = team_name;
-	}
+	/*
+	 * public Long getTeamId() { return teamId; }
+	 * 
+	 * public void setTeamId(Long teamId) { this.teamId = teamId; }
+	 */
 
 	public String getBu() {
 		return bu;
@@ -91,21 +96,28 @@ public class TeamDetailsEntity {
 		this.bu = bu;
 	}
 
-//	public TechTalk_Teams getTechtalk_teams() {
-//		return techtalk_teams;
-//	}
-//
-//	public void setTechtalk_teams(TechTalk_Teams techtalk_teams) {
-//		this.techtalk_teams = techtalk_teams;
-//	}
-	public Long getTopic_id() {
-		return topic_id;
+	public String geteMail() {
+		return eMail;
 	}
 
-	public void setTopic_id(Long topic_id) {
-		this.topic_id = topic_id;
+	public void seteMail(String eMail) {
+		this.eMail = eMail;
 	}
 
-    
- 
+	public TechTalkTeamsEntity getTeam() {
+		return team;
+	}
+
+	public void setTeam(TechTalkTeamsEntity team) {
+		this.team = team;
+	}
+
+	public List<TopicsEntity> getTopics() {
+		return topics;
+	}
+
+	public void setTopics(List<TopicsEntity> topics) {
+		this.topics = topics;
+	}
+
 }

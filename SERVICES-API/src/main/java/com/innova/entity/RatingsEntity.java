@@ -21,22 +21,22 @@ public class RatingsEntity {
 	private Long id;
 
 	@Column(name = "FEED1", nullable = false)
-	private Long feed1;
+	private Integer feed1;
 
 	@Column(name = "FEED2", nullable = false)
-	private Long feed2;
+	private Integer feed2;
 
 	@Column(name = "FEED3", nullable = false)
-	private Long feed3;
+	private Integer feed3;
 
 	@Column(name = "FEED4", nullable = false)
-	private Long feed4;
+	private Integer feed4;
 
 	@Column(name = "FEED5", nullable = false)
-	private Long feed5;
+	private Integer feed5;
 
 	@Column(name = "FEED6", nullable = false)
-	private Long feed6;
+	private Integer feed6;
 
 	@JoinColumn(name = "TOPIC_ID")
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -69,45 +69,6 @@ public class RatingsEntity {
 	 * public void setTopic_id(Long topic_id) { this.topic_id = topic_id; }
 	 */
 
-	public Long getFeed2() {
-		return feed2;
-	}
-
-	public void setFeed2(Long feed2) {
-		this.feed2 = feed2;
-	}
-
-	public Long getFeed3() {
-		return feed3;
-	}
-
-	public void setFeed3(Long feed3) {
-		this.feed3 = feed3;
-	}
-
-	public Long getFeed4() {
-		return feed4;
-	}
-
-	public void setFeed4(Long feed4) {
-		this.feed4 = feed4;
-	}
-
-	public Long getFeed5() {
-		return feed5;
-	}
-
-	public void setFeed5(Long feed5) {
-		this.feed5 = feed5;
-	}
-
-	public Long getFeed6() {
-		return feed6;
-	}
-
-	public void setFeed6(Long feed6) {
-		this.feed6 = feed6;
-	}
 
 	public Long getId() {
 		return id;
@@ -115,14 +76,6 @@ public class RatingsEntity {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Long getFeed1() {
-		return feed1;
-	}
-
-	public void setFeed1(Long feed1) {
-		this.feed1 = feed1;
 	}
 
 	public TopicsEntity getTopic() {
@@ -139,6 +92,54 @@ public class RatingsEntity {
 
 	public void setTeam(TeamDetailsEntity team) {
 		this.team = team;
+	}
+
+	public Integer getFeed2() {
+		return feed2;
+	}
+
+	public void setFeed2(Integer feed2) {
+		this.feed2 = feed2;
+	}
+
+	public Integer getFeed3() {
+		return feed3;
+	}
+
+	public void setFeed3(Integer feed3) {
+		this.feed3 = feed3;
+	}
+
+	public Integer getFeed4() {
+		return feed4;
+	}
+
+	public void setFeed4(Integer feed4) {
+		this.feed4 = feed4;
+	}
+
+	public Integer getFeed5() {
+		return feed5;
+	}
+
+	public void setFeed5(Integer feed5) {
+		this.feed5 = feed5;
+	}
+
+	public Integer getFeed6() {
+		return feed6;
+	}
+
+	public void setFeed6(Integer feed6) {
+		this.feed6 = feed6;
+	}
+
+	public void setFeed1(Integer feed1) {
+		this.feed1 = feed1;
+	}
+
+	public Integer getFeed1() {
+		return feed1;
 	}
 
 }

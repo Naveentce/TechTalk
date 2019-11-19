@@ -37,6 +37,9 @@ public class TeamDetailsEntity {
 	 * @Column(name = "TEAM_ID", nullable = false) private Long teamId;
 	 */
 	
+	@OneToMany(mappedBy = "team")
+	private List<RatingsEntity> ratings;
+	
 	@OneToMany(mappedBy =  "presentedBy")
 	private List<TopicsEntity> topics; 
 	
@@ -118,6 +121,14 @@ public class TeamDetailsEntity {
 
 	public void setTopics(List<TopicsEntity> topics) {
 		this.topics = topics;
+	}
+
+	public List<RatingsEntity> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<RatingsEntity> ratings) {
+		this.ratings = ratings;
 	}
 
 }

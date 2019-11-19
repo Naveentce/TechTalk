@@ -35,12 +35,12 @@ public class RatingsCotroller {
 		List<RatingsEntity> ratings = new ArrayList<RatingsEntity>();
 		for (RatingsBO ratingsBO : values) {
 			RatingsEntity entity = new RatingsEntity();
-			entity.setFeed1(Long.valueOf(ratingsBO.getValue1()));
-			entity.setFeed2(Long.valueOf(ratingsBO.getValue2()));
-			entity.setFeed3(Long.valueOf(ratingsBO.getValue3()));
-			entity.setFeed4(Long.valueOf(ratingsBO.getValue4()));
-			entity.setFeed5(Long.valueOf(ratingsBO.getValue5()));
-			entity.setFeed6(Long.valueOf(ratingsBO.getValue6()));
+			entity.setFeed1(Integer.valueOf(ratingsBO.getValue1()));
+			entity.setFeed2(Integer.valueOf(ratingsBO.getValue2()));
+			entity.setFeed3(Integer.valueOf(ratingsBO.getValue3()));
+			entity.setFeed4(Integer.valueOf(ratingsBO.getValue4()));
+			entity.setFeed5(Integer.valueOf(ratingsBO.getValue5()));
+			entity.setFeed6(Integer.valueOf(ratingsBO.getValue6()));
 			ratings.add(entity);
 		}
 		

@@ -16,7 +16,7 @@ public class VersionEntity {
 	@GeneratedValue
 	@Column(name = "ID", nullable = false)
 	private Long id;
-
+	
 	// @Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "START_DATE", nullable = false)
 	private Timestamp startDate;
@@ -32,7 +32,7 @@ public class VersionEntity {
 	}
 
 	public void setId(Long id) {
-		id = id;
+		this.id = id;
 	}
 
 	public Timestamp getStartDate() {

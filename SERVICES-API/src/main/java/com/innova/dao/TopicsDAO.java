@@ -12,5 +12,7 @@ public interface TopicsDAO extends CrudRepository<TopicsEntity, Long> {
 
 	public List<TopicsEntity> findByTitleLike(String name);
 	
+	public List<TopicsEntity> findCurrentTopics();
+	
 
 }
